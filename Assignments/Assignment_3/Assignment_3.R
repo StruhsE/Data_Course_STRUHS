@@ -163,21 +163,24 @@ for(i in levels(dat$Species)){
   print(mean(dat[dat$Species == i,"Sepal.Length"]))
 }
 
-
+plot (sep)
 
 # YOUR REMAINING HOMEWORK ASSIGNMENT (Fill in with code) ####
-
+dat <-iris
 # 1.  Make a scatterplot of Sepal.Length vs Sepal.Width. See if you can get the points to be colored by "Species"
-
+plot(x=dat$Sepal.Length,y=dat$Sepal.Width,col=dat$Species)
 
 # 2.  Write the code to save it (with meaningful labels) as a jpeg file
-
+jpeg("./Sepal_Size")
+plot(x=dat$Sepal.Length,y=dat$Sepal.Width, main = "Sepal Size", xlab = "Length", ylab = "Width",col=dat$Species)
+dev.off()
 
 # 3.  Subset the Iris data set to only include rows from the setosa and virginica Species
-
+dat [c(1:50,101:150),]
 
 # 4.  Write code to save this new subset as a .csv file called setosa_and_virginica.csv
-
+write.csv(dat4,"./Assignment_3.csv")
+dat4 <- dat[c(1:50,101:150),]
 
 # 5.  Upload this R script (with all answers filled in and tasks completed) to canvas and GitHub
       # I should be able to run your R script and get all the plots created and saved, etc.

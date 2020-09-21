@@ -87,8 +87,10 @@ summary(df) # summary() works differently for different data classes. Note how i
 **Questions:**
 
   + **5. What command would give the summary stats for ONLY the Home.Value column?**
+  home <- c(df$Home.Value)
+  summary(home)
   + **6. What value is returned by the command: names(df)[4]  ?**
-  
+  names(df)[4]
 ____________
 
 
@@ -110,7 +112,7 @@ Note that the plot() function automatically tries to determine the best type of 
 
   + **7. What is happening when you add (...col=df\$region) to the above plotting code?**  
   **In other words, what happens when you run: plot(x=df\$Year,y=df\$Land.Value,col=df\$region)**
-  
+  plot(x=df$Year,y=df$Land.Value,col=df$region)
 _______________
 
 # Now, for the rest of the assignment...
